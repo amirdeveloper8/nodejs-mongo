@@ -6,9 +6,9 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", auth, async (req, res, next) => {
-  throw new Error("Could not get the genres");
-  // const genres = await Genre.find();
-  // res.send(genres);
+  // throw new Error("Could not get the genres");
+  const genres = await Genre.find();
+  res.send(genres);
 });
 
 router.post("/", auth, async (req, res) => {
